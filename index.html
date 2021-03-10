@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaflet Maper</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: relative;
+    }
+    .help {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 25px;
+      z-index: 9999;
+    }
+    .help a {
+      color: rgb(10, 145, 185);
+    }
+    #map {
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="help">
+      Различные визуализаторы карт находятся 
+      <a href="http://leaflet-extras.github.io/leaflet-providers/preview/index.html" target="_blank">тут</a>
+    </div>
+    <div id="map" data-coor-x="55.751999" data-coor-y="37.617734"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+  <script src="map.js"></script>
+  <script>
+    new LeafletMaper("map", {
+      popup: "<h2>Тестовый заголовок</h2>"
+    });
+  </script>
+</body>
+</html>
