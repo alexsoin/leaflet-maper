@@ -61,7 +61,8 @@ export default class LeafletMap {
 	}
 
 	addMarker(point) {
-		const newMarker = marker([point.x, point.y], { icon: point.ico || this.defaultIcon }).addTo(this.map);
+		const icon = point.ico ? this.createIcon(point.ico) : this.defaultIcon;
+		const newMarker = marker([point.x, point.y], { icon }).addTo(this.map);
 
 		if(point.desc) {
 			newMarker.bindPopup(point.desc);
